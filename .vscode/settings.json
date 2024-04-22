@@ -1,0 +1,25 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.adapterTargetName": "esp32",
+  "idf.customExtraPaths": "/Users/jonas/.espressif/tools/xtensa-esp-elf-gdb/12.1_20231023/xtensa-esp-elf-gdb/bin:/Users/jonas/.espressif/tools/riscv32-esp-elf-gdb/12.1_20231023/riscv32-esp-elf-gdb/bin:/Users/jonas/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin:/Users/jonas/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin:/Users/jonas/.espressif/tools/esp32ulp-elf/2.35_20220830/esp32ulp-elf/bin:/Users/jonas/.espressif/tools/openocd-esp32/v0.12.0-esp32-20230921/openocd-esp32/bin:/Users/jonas/.espressif/tools/esp-rom-elfs/20230320",
+  "idf.customExtraVars": {
+    "OPENOCD_SCRIPTS": "/Users/jonas/.espressif/tools/openocd-esp32/v0.12.0-esp32-20230921/openocd-esp32/share/openocd/scripts",
+    "ESP_ROM_ELF_DIR": "/Users/jonas/.espressif/tools/esp-rom-elfs/20230320/"
+  },
+  "idf.espIdfPath": "/Users/jonas/esp/v5.2/esp-idf",
+  "idf.openOcdConfigs": [
+    "interface/ftdi/esp32_devkitj_v1.cfg",
+    "target/esp32.cfg"
+  ],
+  "idf.port": "/dev/cu.usbserial-210",
+  "idf.pythonBinPath": "/Users/jonas/.espressif/python_env/idf5.2_py3.12_env/bin/python",
+  "idf.toolsPath": "/Users/jonas/.espressif",
+  "files.associations": {
+    "esp_wifi_types.h": "c",
+    "esp_netif.h": "c",
+    "mqtt_client.h": "c",
+    "esp_log.h": "c",
+    "wifi_handling.h": "c"
+  },
+  "idf.flashType": "UART"
+}

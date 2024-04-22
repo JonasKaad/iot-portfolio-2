@@ -1,0 +1,26 @@
+menu "Portfolio 2 Config"
+
+    config MQTT_BROKER
+        string "Broker URL"
+        default "mqtt://mqtt.eclipseprojects.io"
+        help
+            URL of the broker to connect to
+
+    config MQTT_COMMAND_TOPIC
+        string "Command topic"
+        default "lowefforttopic"
+        
+    config MQTT_RESPONSE_TOPIC
+        string "Response topic"
+        default "loweffortresponse"
+
+    config WIFI_SSID
+        string "Wifi SSID"
+        default "loweffortwifi"
+        
+    config WIFI_PASSWORD
+        string "Wifi Password"
+        default "loweffortpassword"
+    
+
+endmenu
