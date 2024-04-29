@@ -12,9 +12,10 @@
 #include "nvs_flash.h"
 #include "esp_event.h"
 #include "esp_netif.h"
-#include "protocol_examples_common.h"
 #include "esp_log.h"
 #include "mqtt_client.h"
+#include "driver/adc.h"
+#include "esp_adc_cal.h"
 
 #include "command_handler.h"
 #include "wifi_handling.h"
@@ -236,6 +237,18 @@ static void mqtt5_app_start(void)
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt5_event_handler, NULL);
     esp_mqtt_client_start(client);
 }
+static esp_adc_cal_characteristics_t adc1_chars;
+
+uint32_t measure_temp(void)
+{
+    uint32_t voltage = esp_adc_cal_raw_to_voltage(adc1_get_raw(ADC1_CHANNEL_6), &adc1_chars);
+    // p. 9 of datasheet shows that 0C = 2100 mV
+    uint32_t xyz = 2100 - voltage;
+
+    // p. 6, in the "electrical characteristics" table, row one shows that -10.9 change in mV per degree, when between -30C and 90C
+    float temperature = xyz / 10.9;
+    return temperature;
+}
 
 void app_main(void)
 {
@@ -261,6 +274,11 @@ void app_main(void)
      * examples/protocols/README.md for more information about this function.
      */
     ESP_ERROR_CHECK(open_wifi_connection());
+
+    esp_adc_cal_characterize(ADC_UNIT_1, ADC_ATTEN_DB_11, ADC_WIDTH_BIT_DEFAULT, 0, &adc1_chars);
+
+    ESP_ERROR_CHECK(adc1_config_width(ADC_WIDTH_BIT_DEFAULT));
+    ESP_ERROR_CHECK(adc1_config_channel_atten(ADC1_CHANNEL_6, ADC_ATTEN_DB_11));
 
     mqtt5_app_start();
 }

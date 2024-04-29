@@ -2,17 +2,17 @@ menu "Portfolio 2 Config"
 
     config MQTT_BROKER
         string "Broker URL"
-        default "mqtt://mqtt.eclipseprojects.io"
+        default "mqtt://hosting.alexandernorup.com"
         help
             URL of the broker to connect to
 
     config MQTT_COMMAND_TOPIC
         string "Command topic"
-        default "lowefforttopic"
+        default "loweffortcommandtopic"
         
     config MQTT_RESPONSE_TOPIC
         string "Response topic"
-        default "loweffortresponse"
+        default "loweffortresponsetopic"
 
     config WIFI_SSID
         string "Wifi SSID"

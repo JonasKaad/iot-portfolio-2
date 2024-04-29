@@ -11,7 +11,7 @@
     "interface/ftdi/esp32_devkitj_v1.cfg",
     "target/esp32.cfg"
   ],
-  "idf.port": "/dev/cu.usbserial-210",
+  "idf.port": "/dev/cu.usbserial-110",
   "idf.pythonBinPath": "/Users/jonas/.espressif/python_env/idf5.2_py3.12_env/bin/python",
   "idf.toolsPath": "/Users/jonas/.espressif",
   "files.associations": {
@@ -19,7 +19,8 @@
     "esp_netif.h": "c",
     "mqtt_client.h": "c",
     "esp_log.h": "c",
-    "wifi_handling.h": "c"
+    "wifi_handling.h": "c",
+    "time.h": "c"
   },
   "idf.flashType": "UART"
 }

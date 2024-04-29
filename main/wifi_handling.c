@@ -73,7 +73,7 @@ esp_err_t open_wifi_connection(void)
             .password = CONFIG_WIFI_PASSWORD,
             .scan_method = WIFI_ALL_CHANNEL_SCAN,
             .sort_method = WIFI_CONNECT_AP_BY_SIGNAL,
-            .threshold.rssi = CONFIG_EXAMPLE_WIFI_SCAN_RSSI_THRESHOLD,
+            .threshold.rssi = -127,
             .threshold.authmode = WIFI_AUTH_OPEN,
         },
     };
