@@ -64,7 +64,7 @@ void handle_command(char *data, int datalen)
         }
         if (currentTime % 100 == 0)
         {
-            // To not trigger the Watchdog
+            // To not trigger the Watchdog a delay is set periodically
             vTaskDelay(pdMS_TO_TICKS(10));
         }
     }
