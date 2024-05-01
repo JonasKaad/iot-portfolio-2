@@ -239,7 +239,7 @@ static void mqtt5_app_start(void)
 }
 static esp_adc_cal_characteristics_t adc1_chars;
 
-uint32_t measure_temp(void)
+float measure_temp(void)
 {
     uint32_t voltage = esp_adc_cal_raw_to_voltage(adc1_get_raw(ADC1_CHANNEL_6), &adc1_chars);
     // p. 9 of datasheet shows that 0C = 2100 mV
